@@ -1,0 +1,51 @@
+07:14:03 round 1: 60 trials, workers=3, sandbox=off
+07:14:03 start r1_cheap_H07_cache_key_r2 attempt 1 model=grok-4.5 sandbox=off
+07:14:05 start r1_strong_H10_migrate_v2_r1 attempt 1 model=grok-4.7 sandbox=off
+07:14:06 start r1_cheap_T02_duplicate_r1 attempt 1 model=grok-4.5 sandbox=off
+07:14:19 done r1_cheap_T02_duplicate_r1 attempt 1 status=infra cost=0.01971456 turns=4 13s
+07:14:39 start r1_cheap_T02_duplicate_r1 attempt 2 model=grok-4.5 sandbox=off
+07:14:58 done r1_cheap_T02_duplicate_r1 attempt 2 status=infra cost=0.024041264 turns=4 19s
+07:14:59 done r1_cheap_H07_cache_key_r2 attempt 1 status=infra cost=0.026702104 turns=6 56s
+07:15:19 start r1_cheap_H07_cache_key_r2 attempt 2 model=grok-4.5 sandbox=off
+07:15:38 start r1_cheap_T02_duplicate_r1 attempt 3 model=grok-4.5 sandbox=off
+07:15:50 done r1_cheap_T02_duplicate_r1 attempt 3 status=infra cost=0.023952592 turns=4 12s
+07:16:16 done r1_cheap_H07_cache_key_r2 attempt 2 status=infra cost=0.035679464 turns=6 57s
+07:16:42 round 1: 60 trials, workers=3, sandbox=off
+07:16:42 start r1_cheap_H07_cache_key_r2 attempt 1 model=grok-4.5 sandbox=off
+07:16:44 start r1_strong_H10_migrate_v2_r1 attempt 1 model=grok-4.7 sandbox=off
+07:16:45 start r1_cheap_T02_duplicate_r1 attempt 1 model=grok-4.5 sandbox=off
+07:17:00 done r1_cheap_T02_duplicate_r1 attempt 1 status=infra cost=0.024241048 turns=4 15s
+07:17:00 limit marker on r1_cheap_T02_duplicate_r1; backing off
+07:17:26 done r1_cheap_H07_cache_key_r2 attempt 1 status=pass cost=0.042131848 turns=6 43s
+07:20:33 round 1: 59 trials, workers=3, sandbox=off
+07:20:33 start r1_cheap_T02_duplicate_r2 attempt 1 model=grok-4.5 sandbox=off
+07:20:35 start r1_strong_N01_median_r2 attempt 1 model=grok-4.7 sandbox=off
+07:20:36 start r1_cheap_H03_coupon_stack_r2 attempt 1 model=grok-4.5 sandbox=off
+07:20:50 done r1_cheap_T02_duplicate_r2 attempt 1 status=pass cost=0.021702336 turns=5 17s
+07:20:50 start r1_cheap_H10_migrate_v2_r1 attempt 1 model=grok-4.5 sandbox=off
+07:20:53 done r1_strong_N01_median_r2 attempt 1 status=pass cost=0.0285804 turns=5 18s
+07:20:53 start r1_strong_T02_duplicate_r2 attempt 1 model=grok-4.7 sandbox=off
+07:21:05 done r1_strong_T02_duplicate_r2 attempt 1 status=pass cost=0.02302752 turns=5 12s
+07:21:05 start r1_cheap_H02_refactor_split_r2 attempt 1 model=grok-4.5 sandbox=off
+07:21:34 done r1_cheap_H03_coupon_stack_r2 attempt 1 status=pass cost=0.035344904 turns=6 57s
+07:21:34 start r1_cheap_H02_refactor_split_r1 attempt 1 model=grok-4.5 sandbox=off
+07:22:32 done r1_cheap_H10_migrate_v2_r1 attempt 1 status=pass cost=0.039967272 turns=5 101s
+07:22:32 start r1_cheap_H01_units_chain_r2 attempt 1 model=grok-4.5 sandbox=off
+07:22:52 done r1_cheap_H02_refactor_split_r2 attempt 1 status=pass cost=0.036020688 turns=8 106s
+07:22:52 start r1_cheap_N01_median_r1 attempt 1 model=grok-4.5 sandbox=off
+07:23:07 done r1_cheap_N01_median_r1 attempt 1 status=pass cost=0.02039796 turns=4 15s
+07:23:07 start r1_cheap_H08_topo_cycle_r1 attempt 1 model=grok-4.5 sandbox=off
+07:23:17 done r1_cheap_H01_units_chain_r2 attempt 1 status=pass cost=0.032372352 turns=6 45s
+07:23:17 start r1_strong_H10_migrate_v2_r1 attempt 1 model=grok-4.7 sandbox=off
+07:23:31 done r1_cheap_H02_refactor_split_r1 attempt 1 status=pass cost=0.047342416 turns=7 117s
+07:23:31 start r1_cheap_H03_coupon_stack_r1 attempt 1 model=grok-4.5 sandbox=off
+07:24:12 done r1_cheap_H08_topo_cycle_r1 attempt 1 status=pass cost=0.0318648 turns=10 64s
+07:24:12 start r1_strong_H09_unicode_match_r1 attempt 1 model=grok-4.7 sandbox=off
+07:24:14 done r1_cheap_H03_coupon_stack_r1 attempt 1 status=pass cost=0.028761824 turns=5 42s
+07:24:14 start r1_cheap_H08_topo_cycle_r2 attempt 1 model=grok-4.5 sandbox=off
+07:35:57 round 1: 48 trials, workers=3, sandbox=off
+07:35:57 start r1_cheap_N02_duration_r2 attempt 1 model=grok-4.5 sandbox=off
+07:35:58 start r1_cheap_H08_topo_cycle_r2 attempt 1 model=grok-4.5 sandbox=off
+07:36:00 start r1_cheap_H04_tax_rounding_r1 attempt 1 model=grok-4.5 sandbox=off
+07:36:09 done r1_cheap_N02_duration_r2 attempt 1 status=pass cost=0.021031992 turns=4 13s
+07:36:09 start r1_strong_H09_unicode_match_r2 attempt 1 model=grok-4.7 sandbox=off

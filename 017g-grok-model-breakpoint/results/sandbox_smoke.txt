@@ -1,0 +1,5 @@
+Unscored smoke at 2026-10-15T07:13:27Z, before any task trial.
+Command: grok --no-auto-update -p 'Reply with the single word OK. Do not use tools.' --model grok-4.5 --reasoning-effort high --sandbox strict --max-turns 2 ...
+Exit 1. Stdout empty.
+stderr: sandbox profile resolve failed: symlinked GROK_HOME is not allowed under sandbox write-deny: /home/sandbox/.grok
+Refusing to start. Scored runs therefore omit --sandbox. Hidden tests are not in the agent cwd (/tmp/017g-work). The prompt says not to search outside that directory. A model that ignores the prompt and searches the filesystem could still open tasks/hard/*/hidden.

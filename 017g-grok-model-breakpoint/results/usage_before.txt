@@ -1,0 +1,5 @@
+Current balance: 177.71 compute units
+Usage rate: 3.08/hr
+Active assignments: 2
+Observed: 2026-10-15T07:03:01Z
+GPU for this experiment: none

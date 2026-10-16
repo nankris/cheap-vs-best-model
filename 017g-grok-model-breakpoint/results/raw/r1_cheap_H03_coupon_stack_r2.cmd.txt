@@ -1,0 +1,11 @@
+grok --no-auto-update -p Read SPEC.md. Make the visible tests pass and make the application match the whole contract in SPEC.md, including behavior the visible test does not cover.
+
+Run the visible tests with:
+  PYTHONPATH=_vendor python3 -m pytest tests/test_visible.py -q --noconftest
+
+Rules:
+- Change application code only.
+- Do not edit, delete, or add files under tests/ or _vendor/.
+- Do not hardcode outputs for the visible examples.
+- Do not search outside this directory.
+- SPEC.md says if the grader deletes a file. Do not depend on a file the grader deletes. --always-approve --cwd ...
