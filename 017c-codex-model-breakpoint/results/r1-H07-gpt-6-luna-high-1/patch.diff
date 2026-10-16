@@ -1,0 +1,65 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..cc59305 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,6 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode the JSON array of undirected edges."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..df91d0e 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,25 @@
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the lexicographically ordered connected components in rows."""
++    neighbors = {}
++    for edge in rows:
++        left, right = edge
++        neighbors.setdefault(left, set()).add(right)
++        neighbors.setdefault(right, set()).add(left)
++
++    components = []
++    unseen = set(neighbors)
++    while unseen:
++        start = min(unseen)
++        stack = [start]
++        unseen.remove(start)
++        component = []
++        while stack:
++            node = stack.pop()
++            component.append(node)
++            for neighbor in neighbors[node]:
++                if neighbor in unseen:
++                    unseen.remove(neighbor)
++                    stack.append(neighbor)
++        components.append(sorted(component))
++
++    return sorted(components)
+diff --git a/render.py b/render.py
+index 80aac64..953db0c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)
+diff --git a/service.py b/service.py
+index 5d2579a..962301d 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,5 @@
+ from core import solve
++
++
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

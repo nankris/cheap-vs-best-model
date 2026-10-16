@@ -1,0 +1,93 @@
+diff --git a/api.py b/api.py
+index 2bde390..c42f92b 100644
+--- a/api.py
++++ b/api.py
+@@ -1,5 +1,9 @@
++import json
++
+ from codec import decode
+ from service import compute
+ from render import present
+-def run(payload):
+-    return present(compute(decode(payload)))
++
++
++def run(payload: str) -> str:
++    return json.dumps(present(compute(decode(payload))))
+diff --git a/codec.py b/codec.py
+index 7e4278f..cbeefb9 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,5 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 4f39b98..d5be0ad 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,30 @@
+-def solve(rows):
+-    return sum(float(x) for x in rows)
++from dataclasses import dataclass
++from decimal import Context, Decimal, ROUND_HALF_EVEN, localcontext
++from typing import Iterable
++
++
++@dataclass(frozen=True)
++class Money:
++    cents: int
++
++    @classmethod
++    def parse(cls, decimal_string: str) -> "Money":
++        amount = Decimal(decimal_string)
++        if not amount.is_finite():
++            raise ValueError("Money must be finite")
++
++        # Allow all integer digits and two fractional digits, regardless of the
++        # caller's decimal precision. Reserve room for a rounding carry too.
++        precision = max(1, len(amount.as_tuple().digits), amount.adjusted() + 4)
++        with localcontext(Context(prec=precision, rounding=ROUND_HALF_EVEN)):
++            rounded = amount.quantize(Decimal("0.01"))
++            return cls(int(rounded * 100))
++
++    def __add__(self, other: "Money") -> "Money":
++        if not isinstance(other, Money):
++            return NotImplemented
++        return Money(self.cents + other.cents)
++
++
++def solve(rows: Iterable[str]) -> Money:
++    return sum((Money.parse(row) for row in rows), Money(0))
+diff --git a/render.py b/render.py
+index 80aac64..68beade 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,7 @@
+-def present(value):
+-    return str(value)
++from core import Money
++
++
++def present(value: Money) -> str:
++    whole, fractional = divmod(abs(value.cents), 100)
++    sign = "-" if value.cents < 0 else ""
++    return f"{sign}{whole}.{fractional:02d}"
+diff --git a/service.py b/service.py
+index 5d2579a..89a0f43 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,7 @@
+-from core import solve
+-def compute(rows):
+-    return solve(rows[::-1])
++from typing import Iterable
++
++from core import Money, solve
++
++
++def compute(rows: Iterable[str]) -> Money:
++    return solve(rows)

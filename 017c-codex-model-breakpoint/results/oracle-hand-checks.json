@@ -1,0 +1,448 @@
+[
+  {
+    "name": "intervals",
+    "case": [
+      [
+        5,
+        1
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        20,
+        20
+      ]
+    ],
+    "expected": [
+      [
+        1,
+        9
+      ],
+      [
+        20,
+        20
+      ]
+    ],
+    "passed": true
+  },
+  {
+    "name": "scheduling",
+    "case": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        2,
+        4,
+        4
+      ],
+      [
+        0,
+        4,
+        7
+      ]
+    ],
+    "expected": 8,
+    "passed": true
+  },
+  {
+    "name": "ledger",
+    "case": [
+      [
+        "a",
+        ".005",
+        "1"
+      ],
+      [
+        "a",
+        ".005",
+        "2"
+      ],
+      [
+        "b",
+        "2",
+        "1"
+      ]
+    ],
+    "expected": [
+      [
+        "a",
+        "0.01"
+      ]
+    ],
+    "passed": true
+  },
+  {
+    "name": "rollback",
+    "case": [
+      [
+        "set",
+        "a",
+        1
+      ],
+      [
+        "begin"
+      ],
+      [
+        "set",
+        "a",
+        2
+      ],
+      [
+        "begin"
+      ],
+      [
+        "set",
+        "b",
+        3
+      ],
+      [
+        "commit"
+      ],
+      [
+        "rollback"
+      ]
+    ],
+    "expected": [
+      [
+        "a",
+        1
+      ]
+    ],
+    "passed": true
+  },
+  {
+    "name": "ranges",
+    "case": [
+      [
+        0,
+        5
+      ],
+      [
+        2,
+        7
+      ]
+    ],
+    "expected": 4,
+    "passed": true
+  },
+  {
+    "name": "refactor",
+    "case": [
+      ".005",
+      ".005"
+    ],
+    "expected": "0.00",
+    "passed": true
+  },
+  {
+    "name": "matrixchain",
+    "case": [
+      10,
+      30,
+      5,
+      60
+    ],
+    "expected": 4500,
+    "passed": true
+  },
+  {
+    "name": "knapsack",
+    "case": [
+      0,
+      [
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          -1
+        ]
+      ]
+    ],
+    "expected": 8,
+    "passed": true
+  },
+  {
+    "name": "negativepaths",
+    "case": [
+      [
+        "a",
+        "b",
+        "d"
+      ],
+      [
+        [
+          "a",
+          "b",
+          1
+        ],
+        [
+          "b",
+          "b",
+          -1
+        ],
+        [
+          "a",
+          "d",
+          5
+        ]
+      ],
+      "a",
+      "d"
+    ],
+    "expected": 5,
+    "passed": true
+  },
+  {
+    "name": "glob",
+    "case": [
+      "**/x",
+      "x"
+    ],
+    "expected": false,
+    "passed": true
+  },
+  {
+    "name": "jsonpatch",
+    "case": [
+      {
+        "x": 1
+      },
+      [
+        [
+          "replace",
+          "/x",
+          2
+        ],
+        [
+          "remove",
+          "/z"
+        ]
+      ]
+    ],
+    "expected": {
+      "ok": false,
+      "document": {
+        "x": 1
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "matching",
+    "case": [
+      [
+        "a",
+        "b"
+      ],
+      [
+        "a",
+        "b"
+      ],
+      [
+        [
+          "a",
+          "a"
+        ],
+        [
+          "a",
+          "b"
+        ],
+        [
+          "b",
+          "a"
+        ]
+      ]
+    ],
+    "expected": 2,
+    "passed": true
+  },
+  {
+    "name": "mst",
+    "case": [
+      [
+        "a",
+        "b",
+        "c"
+      ],
+      [
+        [
+          "a",
+          "b",
+          1
+        ],
+        [
+          "b",
+          "c",
+          -2
+        ],
+        [
+          "a",
+          "a",
+          -9
+        ]
+      ]
+    ],
+    "expected": -1,
+    "passed": true
+  },
+  {
+    "name": "editdistance",
+    "case": [
+      "ab",
+      "ba",
+      1,
+      1,
+      5
+    ],
+    "expected": 2,
+    "passed": true
+  },
+  {
+    "name": "csv",
+    "case": "\n",
+    "expected": [
+      [
+        ""
+      ]
+    ],
+    "passed": true
+  },
+  {
+    "name": "rpn",
+    "case": [
+      "-7",
+      "3",
+      "/"
+    ],
+    "expected": -2,
+    "passed": true
+  },
+  {
+    "name": "rational",
+    "case": [
+      "1/-3",
+      "-1/-6",
+      "+"
+    ],
+    "expected": "-1/6",
+    "passed": true
+  },
+  {
+    "name": "wildcarddecode",
+    "case": "**",
+    "expected": 96,
+    "passed": true
+  },
+  {
+    "name": "grid",
+    "case": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": 2,
+    "passed": true
+  },
+  {
+    "name": "prefix",
+    "case": [
+      [
+        "",
+        "a",
+        "ab",
+        "abc"
+      ],
+      [
+        "abcd",
+        "x",
+        ""
+      ]
+    ],
+    "expected": [
+      "abc",
+      "",
+      ""
+    ],
+    "passed": true
+  },
+  {
+    "name": "semver",
+    "case": [
+      "1.0.0",
+      "1.0.0-alpha.10",
+      "1.0.0-alpha.2",
+      "1.0.0-alpha"
+    ],
+    "expected": [
+      "1.0.0-alpha",
+      "1.0.0-alpha.2",
+      "1.0.0-alpha.10",
+      "1.0.0"
+    ],
+    "passed": true
+  },
+  {
+    "name": "lru",
+    "case": [
+      2,
+      [
+        [
+          "put",
+          "a",
+          0
+        ],
+        [
+          "put",
+          "b",
+          false
+        ],
+        [
+          "get",
+          "a"
+        ],
+        [
+          "put",
+          "c",
+          3
+        ],
+        [
+          "get",
+          "b"
+        ],
+        [
+          "get",
+          "a"
+        ]
+      ]
+    ],
+    "expected": [
+      0,
+      null,
+      0
+    ],
+    "passed": true
+  }
+]

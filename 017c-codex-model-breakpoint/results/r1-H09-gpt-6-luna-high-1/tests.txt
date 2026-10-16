@@ -1,0 +1,167 @@
+FFFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+_____________________________ test_api[rows0-0.00] _____________________________
+
+rows = [], expected = '0.00'
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+                          ^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+api.py:5: in run
+    return present(compute(decode(payload)))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+service.py:3: in compute
+    return solve(rows[::-1])
+           ^^^^^^^^^^^^^^^^^
+core.py:2: in solve
+    return sum(float(x) for x in rows)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0xffffb0186320>
+
+>   return sum(float(x) for x in rows)
+               ^^^^^^^^
+E   ValueError: could not convert string to float: '[]'
+
+core.py:2: ValueError
+_____________________________ test_api[rows1-0.00] _____________________________
+
+rows = ['.005', '.005'], expected = '0.00'
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+                          ^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+api.py:5: in run
+    return present(compute(decode(payload)))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+service.py:3: in compute
+    return solve(rows[::-1])
+           ^^^^^^^^^^^^^^^^^
+core.py:2: in solve
+    return sum(float(x) for x in rows)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0xffffb0187dc0>
+
+>   return sum(float(x) for x in rows)
+               ^^^^^^^^
+E   ValueError: could not convert string to float: ' ".005"]'
+
+core.py:2: ValueError
+____________________________ test_api[rows2--0.76] _____________________________
+
+rows = ['1.235', '-2.00'], expected = '-0.76'
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+                          ^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+api.py:5: in run
+    return present(compute(decode(payload)))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+service.py:3: in compute
+    return solve(rows[::-1])
+           ^^^^^^^^^^^^^^^^^
+core.py:2: in solve
+    return sum(float(x) for x in rows)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0xffffb018c0a0>
+
+>   return sum(float(x) for x in rows)
+               ^^^^^^^^
+E   ValueError: could not convert string to float: ' "-2.00"]'
+
+core.py:2: ValueError
+_____________________________ test_api[rows3-0.00] _____________________________
+
+rows = ['-0.001'], expected = '0.00'
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+                          ^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+api.py:5: in run
+    return present(compute(decode(payload)))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+service.py:3: in compute
+    return solve(rows[::-1])
+           ^^^^^^^^^^^^^^^^^
+core.py:2: in solve
+    return sum(float(x) for x in rows)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0xffffb0186440>
+
+>   return sum(float(x) for x in rows)
+               ^^^^^^^^
+E   ValueError: could not convert string to float: '["-0.001"]'
+
+core.py:2: ValueError
+________________________ test_api[rows4-10000000000.03] ________________________
+
+rows = ['10000000000.01', '.02'], expected = '10000000000.03'
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+                          ^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+api.py:5: in run
+    return present(compute(decode(payload)))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+service.py:3: in compute
+    return solve(rows[::-1])
+           ^^^^^^^^^^^^^^^^^
+core.py:2: in solve
+    return sum(float(x) for x in rows)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+.0 = <list_iterator object at 0xffffb018d210>
+
+>   return sum(float(x) for x in rows)
+               ^^^^^^^^
+E   ValueError: could not convert string to float: ' ".02"]'
+
+core.py:2: ValueError
+________________________________ test_structure ________________________________
+
+    def test_structure():
+>       from core import Money
+E       ImportError: cannot import name 'Money' from 'core' (/tmp/tig017c-_cfgq0mz/repo/core.py)
+
+../test_hidden.py:12: ImportError
+=========================== short test summary info ============================
+FAILED ../test_hidden.py::test_api[rows0-0.00] - ValueError: could not conver...
+FAILED ../test_hidden.py::test_api[rows1-0.00] - ValueError: could not conver...
+FAILED ../test_hidden.py::test_api[rows2--0.76] - ValueError: could not conve...
+FAILED ../test_hidden.py::test_api[rows3-0.00] - ValueError: could not conver...
+FAILED ../test_hidden.py::test_api[rows4-10000000000.03] - ValueError: could ...
+FAILED ../test_hidden.py::test_structure - ImportError: cannot import name 'M...
+6 failed in 0.04s

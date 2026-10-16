@@ -1,0 +1,127 @@
+{
+  "round": 1,
+  "complete": false,
+  "verdict": "STILL INCONCLUSIVE",
+  "groups": [
+    {
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "level": "hard",
+      "n": 10,
+      "attempted": 10,
+      "passes": 10,
+      "rate": 1.0,
+      "ci": [
+        0.6915028921812392,
+        1.0
+      ],
+      "usd_task": 0.002675268,
+      "total_usd": 0.02675268
+    },
+    {
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "level": "easy",
+      "n": 2,
+      "attempted": 2,
+      "passes": 1,
+      "rate": 0.5,
+      "ci": [
+        0.01257911709342505,
+        0.9874208829065749
+      ],
+      "usd_task": 0.0017388400000000002,
+      "total_usd": 0.0034776800000000004
+    },
+    {
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "level": "hard",
+      "n": 9,
+      "attempted": 9,
+      "passes": 9,
+      "rate": 1.0,
+      "ci": [
+        0.6637328831200572,
+        1.0
+      ],
+      "usd_task": 0.0031384200000000003,
+      "total_usd": 0.02824578
+    },
+    {
+      "model": "gpt-6-luna",
+      "effort": "high",
+      "level": "easy",
+      "n": 7,
+      "attempted": 7,
+      "passes": 7,
+      "rate": 1.0,
+      "ci": [
+        0.5903836027749966,
+        1.0
+      ],
+      "usd_task": 0.0022105714285714285,
+      "total_usd": 0.015474
+    },
+    {
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "level": "hard",
+      "n": 8,
+      "attempted": 8,
+      "passes": 8,
+      "rate": 1.0,
+      "ci": [
+        0.6305833524471807,
+        1.0
+      ],
+      "usd_task": 0.22197275,
+      "total_usd": 1.775782
+    },
+    {
+      "model": "gpt-6-astra",
+      "effort": "low",
+      "level": "easy",
+      "n": 3,
+      "attempted": 3,
+      "passes": 3,
+      "rate": 1.0,
+      "ci": [
+        0.2924017738212866,
+        1.0
+      ],
+      "usd_task": 0.241568,
+      "total_usd": 0.724704
+    },
+    {
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "level": "hard",
+      "n": 8,
+      "attempted": 8,
+      "passes": 8,
+      "rate": 1.0,
+      "ci": [
+        0.6305833524471807,
+        1.0
+      ],
+      "usd_task": 0.26621375,
+      "total_usd": 2.12971
+    },
+    {
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "level": "easy",
+      "n": 2,
+      "attempted": 2,
+      "passes": 2,
+      "rate": 1.0,
+      "ci": [
+        0.15811388300841897,
+        1.0
+      ],
+      "usd_task": 0.176417,
+      "total_usd": 0.352834
+    }
+  ]
+}

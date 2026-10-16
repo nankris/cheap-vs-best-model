@@ -1,0 +1,93 @@
+diff --git a/api.py b/api.py
+index 2bde390..c42f92b 100644
+--- a/api.py
++++ b/api.py
+@@ -1,5 +1,9 @@
++import json
++
+ from codec import decode
+ from service import compute
+ from render import present
+-def run(payload):
+-    return present(compute(decode(payload)))
++
++
++def run(payload: str) -> str:
++    return json.dumps(present(compute(decode(payload))))
+diff --git a/codec.py b/codec.py
+index 7e4278f..f445943 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,5 @@
+ import json
+-def decode(payload):
+-    return payload.split(",")
++
++
++def decode(payload: str) -> list[str]:
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 4f39b98..76b6bf8 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,29 @@
+-def solve(rows):
+-    return sum(float(x) for x in rows)
++from dataclasses import dataclass
++from decimal import Decimal
++from typing import Iterable
++
++
++@dataclass(frozen=True)
++class Money:
++    cents: int
++
++    @classmethod
++    def parse(cls, decimal_string: str) -> "Money":
++        # Decimal construction and integer arithmetic are exact regardless of
++        # the caller's decimal precision or rounding context.
++        numerator, denominator = Decimal(decimal_string).as_integer_ratio()
++        cents, remainder = divmod(numerator * 100, denominator)
++        if remainder * 2 > denominator or (
++            remainder * 2 == denominator and cents % 2
++        ):
++            cents += 1
++        return cls(cents)
++
++    def __add__(self, other: "Money") -> "Money":
++        if not isinstance(other, Money):
++            return NotImplemented
++        return Money(self.cents + other.cents)
++
++
++def solve(rows: Iterable[str]) -> Money:
++    return sum((Money.parse(row) for row in rows), Money(0))
+diff --git a/render.py b/render.py
+index 80aac64..25a20d9 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,7 @@
+-def present(value):
+-    return str(value)
++from core import Money
++
++
++def present(value: Money) -> str:
++    units, cents = divmod(abs(value.cents), 100)
++    sign = "-" if value.cents < 0 else ""
++    return f"{sign}{units}.{cents:02d}"
+diff --git a/service.py b/service.py
+index 5d2579a..89a0f43 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,7 @@
+-from core import solve
+-def compute(rows):
+-    return solve(rows[::-1])
++from typing import Iterable
++
++from core import Money, solve
++
++
++def compute(rows: Iterable[str]) -> Money:
++    return solve(rows)

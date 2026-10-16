@@ -1,0 +1,19 @@
+{
+  "round": 1,
+  "task": "E03",
+  "level": "easy",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 2,
+  "status": "completed",
+  "returncode": 0,
+  "passed": true,
+  "seconds": 47.34,
+  "usage": {
+    "input_tokens": 72952,
+    "cached_input_tokens": 65408,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 972,
+    "reasoning_output_tokens": 20
+  }
+}

@@ -1,0 +1,73 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..1975bf8 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,8 @@
++"""JSON input decoding for the row operation API."""
++
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode a JSON payload into its operation list."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..8bc756a 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,33 @@
++"""Apply row operations, including nested transactions."""
++
++from copy import deepcopy
++
++
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the final sorted rows after applying the operations."""
++    state = {}
++    snapshots = []
++
++    for operation in rows:
++        if not isinstance(operation, list) or not operation:
++            raise ValueError("invalid operation")
++
++        kind = operation[0]
++        if kind == "set" and len(operation) == 3:
++            _, key, value = operation
++            state[key] = deepcopy(value)
++        elif kind == "delete" and len(operation) == 2:
++            _, key = operation
++            state.pop(key, None)
++        elif kind == "begin" and len(operation) == 1:
++            snapshots.append(deepcopy(state))
++        elif kind == "commit" and len(operation) == 1:
++            if snapshots:
++                snapshots.pop()
++        elif kind == "rollback" and len(operation) == 1:
++            if snapshots:
++                state = snapshots.pop()
++        else:
++            raise ValueError("invalid operation")
++
++    return [[key, deepcopy(state[key])] for key in sorted(state)]
+diff --git a/render.py b/render.py
+index 80aac64..2b253b8 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value, separators=(",", ":"), ensure_ascii=False)
+diff --git a/service.py b/service.py
+index 5d2579a..7259b05 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,3 @@
+ from core import solve
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

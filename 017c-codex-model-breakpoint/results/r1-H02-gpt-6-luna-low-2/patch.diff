@@ -1,0 +1,59 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..23d4e72 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,6 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode the JSON payload containing directed [before, after] pairs."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..720c467 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,30 @@
++import heapq
++
++
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the lexicographically smallest topological order, or None."""
++    edges = set()
++    nodes = set()
++    for before, after in rows:
++        nodes.add(before)
++        nodes.add(after)
++        edges.add((before, after))
++
++    outgoing = {node: set() for node in nodes}
++    indegree = {node: 0 for node in nodes}
++    for before, after in edges:
++        outgoing[before].add(after)
++        indegree[after] += 1
++
++    ready = [node for node in nodes if indegree[node] == 0]
++    heapq.heapify(ready)
++    order = []
++    while ready:
++        node = heapq.heappop(ready)
++        order.append(node)
++        for successor in outgoing[node]:
++            indegree[successor] -= 1
++            if indegree[successor] == 0:
++                heapq.heappush(ready, successor)
++
++    return order if len(order) == len(nodes) else None
+diff --git a/render.py b/render.py
+index 80aac64..953db0c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)

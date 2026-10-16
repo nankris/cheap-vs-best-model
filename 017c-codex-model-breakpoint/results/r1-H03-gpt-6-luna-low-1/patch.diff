@@ -1,0 +1,64 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..7856137 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,6 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode a JSON payload containing ledger rows."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..0cee461 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,17 @@
++from collections import defaultdict
++from decimal import Decimal
++
++
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Aggregate exact decimal amounts, retaining the first occurrence of each id."""
++    seen = set()
++    balances = defaultdict(Decimal)
++
++    for row in rows:
++        account, amount, identifier = row
++        if identifier in seen:
++            continue
++        seen.add(identifier)
++        balances[account] += Decimal(amount)
++
++    return sorted(balances.items())
+diff --git a/render.py b/render.py
+index 80aac64..7876a24 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,12 @@
++import json
++from decimal import Decimal, ROUND_HALF_EVEN
++
++
+ def present(value):
+-    return str(value)
++    result = []
++    for account, balance in value:
++        rounded = balance.quantize(Decimal("0.01"), rounding=ROUND_HALF_EVEN)
++        if rounded == 0:
++            rounded = abs(rounded)
++        result.append([account, format(rounded, ".2f")])
++    return json.dumps(result)
+diff --git a/service.py b/service.py
+index 5d2579a..962301d 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,5 @@
+ from core import solve
++
++
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

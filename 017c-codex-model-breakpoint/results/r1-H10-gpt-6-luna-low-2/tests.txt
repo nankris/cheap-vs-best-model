@@ -1,0 +1,106 @@
+.FFF                                                                     [100%]
+=================================== FAILURES ===================================
+__________________________ test_api[rows1-expected1] ___________________________
+
+rows = [['set', 'a', 1], ['begin'], ['set', 'a', 2], ['begin'], ['set', 'b', 3], ['commit'], ...]
+expected = [['a', 1]]
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xffff9ea61220>, s = ' ["rollback"]]'
+_w = <built-in method match of re.Pattern object at 0xffff9ec26260>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 14 (char 13)
+
+/usr/local/lib/python3.12/json/decoder.py:341: JSONDecodeError
+__________________________ test_api[rows2-expected2] ___________________________
+
+rows = [['rollback'], ['commit'], ['delete', 'x'], ['set', 'z', False]]
+expected = [['z', False]]
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xffff9ea61220>, s = ' false]]'
+_w = <built-in method match of re.Pattern object at 0xffff9ec26260>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 7 (char 6)
+
+/usr/local/lib/python3.12/json/decoder.py:341: JSONDecodeError
+__________________________ test_api[rows3-expected3] ___________________________
+
+rows = [['begin'], ['set', 'a', [1, 2]], ['begin'], ['delete', 'a'], ['rollback'], ['commit']]
+expected = [['a', [1, 2]]]
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xffff9ea61220>, s = ' ["commit"]]'
+_w = <built-in method match of re.Pattern object at 0xffff9ec26260>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 12 (char 11)
+
+/usr/local/lib/python3.12/json/decoder.py:341: JSONDecodeError
+=========================== short test summary info ============================
+FAILED ../test_hidden.py::test_api[rows1-expected1] - json.decoder.JSONDecode...
+FAILED ../test_hidden.py::test_api[rows2-expected2] - json.decoder.JSONDecode...
+FAILED ../test_hidden.py::test_api[rows3-expected3] - json.decoder.JSONDecode...
+3 failed, 1 passed in 0.07s

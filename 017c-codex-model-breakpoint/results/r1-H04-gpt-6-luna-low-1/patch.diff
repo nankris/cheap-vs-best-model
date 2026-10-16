@@ -1,0 +1,79 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..3a9a271 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,6 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode the JSON request containing edges and a final query row."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..e8e5aed 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,38 @@
++import heapq
++
++
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the minimum path cost described by edge rows and a final query."""
++    if not isinstance(rows, list) or not rows:
++        raise ValueError("expected a nonempty list of edge rows and a query row")
++
++    query = rows[-1]
++    if not isinstance(query, list) or len(query) != 2:
++        raise ValueError("final row must contain source and target")
++    source, target = query
++    if source == target:
++        return 0
++
++    graph = {}
++    for edge in rows[:-1]:
++        if not isinstance(edge, list) or len(edge) != 3:
++            raise ValueError("edge rows must contain source, target, and weight")
++        start, end, weight = edge
++        if not isinstance(weight, int) or isinstance(weight, bool) or weight < 0:
++            raise ValueError("edge weights must be nonnegative integers")
++        graph.setdefault(start, []).append((end, weight))
++
++    distances = {source: 0}
++    pending = [(0, source)]
++    while pending:
++        cost, node = heapq.heappop(pending)
++        if cost != distances.get(node):
++            continue
++        if node == target:
++            return cost
++        for neighbor, weight in graph.get(node, ()):
++            candidate = cost + weight
++            if candidate < distances.get(neighbor, float("inf")):
++                distances[neighbor] = candidate
++                heapq.heappush(pending, (candidate, neighbor))
++    return None
+diff --git a/render.py b/render.py
+index 80aac64..e8375ca 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,6 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    """Encode the result as JSON (including JSON null for unreachable paths)."""
++    return json.dumps(value)
+diff --git a/service.py b/service.py
+index 5d2579a..962301d 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,5 @@
+ from core import solve
++
++
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

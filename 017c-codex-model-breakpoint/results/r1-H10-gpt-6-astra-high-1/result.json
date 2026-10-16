@@ -1,0 +1,19 @@
+{
+  "round": 1,
+  "task": "H10",
+  "level": "hard",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "status": "completed",
+  "returncode": 0,
+  "passed": true,
+  "seconds": 65.7,
+  "usage": {
+    "input_tokens": 74076,
+    "cached_input_tokens": 64896,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1705,
+    "reasoning_output_tokens": 74
+  }
+}

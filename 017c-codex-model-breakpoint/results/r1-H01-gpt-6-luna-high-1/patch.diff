@@ -1,0 +1,60 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..b2d294a 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,6 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode the JSON payload containing closed integer intervals."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..8bf5c39 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,20 @@
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the sorted union of closed integer intervals.
++
++    Reversed endpoints are normalized, and ranges that overlap or touch at
++    consecutive integer values are merged.
++    """
++    intervals = sorted((min(start, end), max(start, end)) for start, end in rows)
++    if not intervals:
++        return []
++
++    merged = []
++    current_start, current_end = intervals[0]
++    for start, end in intervals[1:]:
++        if start <= current_end + 1:
++            current_end = max(current_end, end)
++        else:
++            merged.append([current_start, current_end])
++            current_start, current_end = start, end
++    merged.append([current_start, current_end])
++    return merged
+diff --git a/render.py b/render.py
+index 80aac64..953db0c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)
+diff --git a/service.py b/service.py
+index 5d2579a..962301d 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,5 @@
+ from core import solve
++
++
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

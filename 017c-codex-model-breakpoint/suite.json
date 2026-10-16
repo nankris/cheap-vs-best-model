@@ -1,0 +1,614 @@
+[
+  {
+    "id": "H01",
+    "name": "intervals",
+    "level": "hard",
+    "spec": "Given integer closed intervals, return their union sorted ascending; merge overlaps AND integer-adjacent ranges. Reversed endpoints are normalized. Empty input returns [].",
+    "reference": "def solve(rows):\n    out=[]\n    for a,b in sorted((min(a,b),max(a,b)) for a,b in rows):\n        if out and a<=out[-1][1]+1: out[-1][1]=max(b,out[-1][1])\n        else: out.append([a,b])\n    return out\n",
+    "cases": [
+      [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          20,
+          20
+        ]
+      ],
+      [],
+      [
+        [
+          0,
+          0
+        ],
+        [
+          -1,
+          -3
+        ],
+        [
+          8,
+          4
+        ]
+      ],
+      [
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "H02",
+    "name": "topology",
+    "level": "hard",
+    "spec": "Input is a list of directed [before,after] string pairs. Return the lexicographically smallest topological ordering of all mentioned nodes, deduplicating edges. If cyclic return null, including self loops. Empty returns [].",
+    "reference": "def solve(rows):\n    import heapq\n    nodes={x for r in rows for x in r}; adj={x:set() for x in nodes}; deg=dict.fromkeys(nodes,0)\n    for a,b in rows:\n        if b not in adj[a]: adj[a].add(b); deg[b]+=1\n    q=[x for x in nodes if not deg[x]]; heapq.heapify(q); out=[]\n    while q:\n        a=heapq.heappop(q); out.append(a)\n        for b in adj[a]:\n            deg[b]-=1\n            if not deg[b]: heapq.heappush(q,b)\n    return out if len(out)==len(nodes) else None\n",
+    "cases": [
+      [],
+      [
+        [
+          "b",
+          "c"
+        ],
+        [
+          "a",
+          "c"
+        ],
+        [
+          "a",
+          "c"
+        ]
+      ],
+      [
+        [
+          "z",
+          "z"
+        ]
+      ],
+      [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "b",
+          "a"
+        ]
+      ],
+      [
+        [
+          "a",
+          "z"
+        ],
+        [
+          "b",
+          "c"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "H03",
+    "name": "ledger",
+    "level": "hard",
+    "spec": "Rows are [account,decimal_amount_string,id]. Ignore repeated ids globally (first wins). Sum exact decimal amounts per account. Return account-sorted [account,balance_string] pairs rounded to two decimal places using ROUND_HALF_EVEN only at the end; normalize negative zero to 0.00.",
+    "reference": "def solve(rows):\n    from decimal import Decimal, ROUND_HALF_EVEN\n    seen=set(); sums={}\n    for a,v,i in rows:\n        if i in seen: continue\n        seen.add(i); sums[a]=sums.get(a,Decimal(0))+Decimal(v)\n    out=[]\n    for a in sorted(sums):\n        v=sums[a].quantize(Decimal('.01'),rounding=ROUND_HALF_EVEN)\n        out.append([a,format(abs(v) if not v else v,'.2f')])\n    return out\n",
+    "cases": [
+      [],
+      [
+        [
+          "a",
+          ".005",
+          "1"
+        ],
+        [
+          "a",
+          ".005",
+          "2"
+        ],
+        [
+          "b",
+          "2",
+          "1"
+        ]
+      ],
+      [
+        [
+          "z",
+          "-.001",
+          "x"
+        ],
+        [
+          "a",
+          "1.225",
+          "y"
+        ],
+        [
+          "b",
+          "1.235",
+          "z"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "H04",
+    "name": "path",
+    "level": "hard",
+    "spec": "Rows are [u,v,nonnegative_integer_weight] directed edges, followed by one final [source,target] row. Return minimum path cost, null if unreachable. Parallel edges allowed. Source=target costs zero even without edges.",
+    "reference": "def solve(rows):\n    import heapq\n    s,t=rows[-1]; adj={}\n    for a,b,w in rows[:-1]: adj.setdefault(a,[]).append((b,w))\n    q=[(0,s)]; d={s:0}\n    while q:\n        c,a=heapq.heappop(q)\n        if c!=d[a]: continue\n        if a==t: return c\n        for b,w in adj.get(a,[]):\n            n=c+w\n            if n<d.get(b,float('inf')): d[b]=n; heapq.heappush(q,(n,b))\n    return None\n",
+    "cases": [
+      [
+        [
+          "a",
+          "a"
+        ]
+      ],
+      [
+        [
+          "a",
+          "b",
+          9
+        ],
+        [
+          "a",
+          "c",
+          1
+        ],
+        [
+          "c",
+          "b",
+          2
+        ],
+        [
+          "a",
+          "b"
+        ]
+      ],
+      [
+        [
+          "a",
+          "b",
+          0
+        ],
+        [
+          "b",
+          "a",
+          0
+        ],
+        [
+          "b",
+          "c",
+          2
+        ],
+        [
+          "a",
+          "c"
+        ]
+      ],
+      [
+        [
+          "x",
+          "z"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "H05",
+    "name": "versions",
+    "level": "hard",
+    "spec": "Rows are [key,integer_version,value_or_null]. For each key choose greatest version, last row on ties. Null is a deletion and removes that key. Return sorted [key,value] rows. Do not confuse false, 0, or empty string with deletion.",
+    "reference": "def solve(rows):\n    d={}\n    for k,v,x in rows:\n        if k not in d or v>=d[k][0]: d[k]=(v,x)\n    return [[k,d[k][1]] for k in sorted(d) if d[k][1] is not None]\n",
+    "cases": [
+      [],
+      [
+        [
+          "a",
+          2,
+          null
+        ],
+        [
+          "a",
+          1,
+          7
+        ],
+        [
+          "b",
+          0,
+          false
+        ],
+        [
+          "c",
+          -1,
+          0
+        ]
+      ],
+      [
+        [
+          "z",
+          1,
+          1
+        ],
+        [
+          "z",
+          1,
+          2
+        ],
+        [
+          "z",
+          0,
+          3
+        ],
+        [
+          "x",
+          5,
+          ""
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "H06",
+    "name": "scheduling",
+    "level": "hard",
+    "spec": "Rows are [start,end,integer_reward] jobs, with start<end. Return maximum sum of rewards of nonoverlapping jobs. End equal to next start is allowed. Choosing no jobs yields zero. Input unordered; duplicate jobs are separate jobs but cannot overlap.",
+    "reference": "def solve(rows):\n    from bisect import bisect_right\n    jobs=sorted(rows,key=lambda x:x[1]); ends=[r[1] for r in jobs]; dp=[0]\n    for i,(s,e,v) in enumerate(jobs): dp.append(max(dp[-1],v+dp[bisect_right(ends,s,hi=i)]))\n    return dp[-1]\n",
+    "cases": [
+      [],
+      [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          2,
+          4,
+          4
+        ],
+        [
+          0,
+          4,
+          7
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          -1
+        ]
+      ],
+      [
+        [
+          4,
+          8,
+          9
+        ],
+        [
+          1,
+          4,
+          6
+        ],
+        [
+          0,
+          8,
+          14
+        ],
+        [
+          1,
+          4,
+          6
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "H07",
+    "name": "components",
+    "level": "hard",
+    "spec": "Rows are undirected [node,node] string edges. Return connected components; each component sorted; components lexicographically sorted. Self loops introduce singleton nodes. Duplicate edges irrelevant.",
+    "reference": "def solve(rows):\n    adj={}\n    for a,b in rows: adj.setdefault(a,set()).add(b); adj.setdefault(b,set()).add(a)\n    seen=set(); out=[]\n    for a in sorted(adj):\n        if a in seen: continue\n        q=[a]; seen.add(a); c=[]\n        while q:\n            v=q.pop(); c.append(v)\n            for w in adj[v]:\n                if w not in seen: seen.add(w); q.append(w)\n        out.append(sorted(c))\n    return sorted(out)\n",
+    "cases": [
+      [],
+      [
+        [
+          "z",
+          "z"
+        ],
+        [
+          "b",
+          "c"
+        ],
+        [
+          "a",
+          "b"
+        ]
+      ],
+      [
+        [
+          "a",
+          "b"
+        ],
+        [
+          "c",
+          "d"
+        ],
+        [
+          "b",
+          "c"
+        ],
+        [
+          "e",
+          "e"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "H08",
+    "name": "ranges",
+    "level": "hard",
+    "spec": "Rows are [start,end] integer half-open intervals. Ignore empty or reversed intervals. Return total integer length covered by an ODD number of intervals (duplicates cancel), not their union length.",
+    "reference": "def solve(rows):\n    ev={}\n    for a,b in rows:\n        if a>=b: continue\n        ev[a]=ev.get(a,0)^1; ev[b]=ev.get(b,0)^1\n    ans=0; parity=0; last=0\n    for x in sorted(ev):\n        if parity: ans+=x-last\n        parity^=ev[x]; last=x\n    return ans\n",
+    "cases": [
+      [],
+      [
+        [
+          0,
+          5
+        ],
+        [
+          2,
+          7
+        ]
+      ],
+      [
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      [
+        [
+          8,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          -4,
+          0
+        ],
+        [
+          -2,
+          2
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "H09",
+    "name": "refactor",
+    "level": "hard",
+    "spec": "Refactor core.py to expose immutable frozen dataclass Money(cents:int), Money.parse(decimal_string) using exact Decimal and half-even rounding to cents, and __add__ returning Money. Update service.py and render.py to use Money throughout: service.compute(rows) returns Money; render.present(Money) formats decimal two places. Rows are decimal strings. Sum rounded cents per row, not rounding the total. api.run returns a JSON-encoded balance string. Preserve input order independence.",
+    "reference": "from dataclasses import dataclass\nfrom decimal import Decimal, ROUND_HALF_EVEN\n@dataclass(frozen=True)\nclass Money:\n    cents:int\n    @classmethod\n    def parse(cls,s): return cls(int((Decimal(s)*100).quantize(Decimal('1'),rounding=ROUND_HALF_EVEN)))\n    def __add__(self,other): return Money(self.cents+other.cents)\ndef solve(rows):\n    m=Money(0)\n    for s in rows: m=m+Money.parse(s)\n    return ('-' if m.cents<0 else '')+str(abs(m.cents)//100)+'.'+str(abs(m.cents)%100).zfill(2)\n",
+    "cases": [
+      [],
+      [
+        ".005",
+        ".005"
+      ],
+      [
+        "1.235",
+        "-2.00"
+      ],
+      [
+        "-0.001"
+      ],
+      [
+        "10000000000.01",
+        ".02"
+      ]
+    ]
+  },
+  {
+    "id": "H10",
+    "name": "rollback",
+    "level": "hard",
+    "spec": "Rows are operations: [\"set\",key,value], [\"delete\",key], [\"begin\"], [\"commit\"], [\"rollback\"]. Nested transactions: begin snapshots state, commit discards latest snapshot while retaining changes, rollback restores latest snapshot. commit/rollback with no snapshot are no-ops. Return sorted [key,value] final rows. Values can be nested JSON; never mutate input.",
+    "reference": "def solve(rows):\n    from copy import deepcopy\n    d={}; stack=[]\n    for r in rows:\n        op=r[0]\n        if op=='set': d[r[1]]=deepcopy(r[2])\n        elif op=='delete': d.pop(r[1],None)\n        elif op=='begin': stack.append(deepcopy(d))\n        elif op=='commit':\n            if stack: stack.pop()\n        elif op=='rollback':\n            if stack: d=stack.pop()\n    return [[k,d[k]] for k in sorted(d)]\n",
+    "cases": [
+      [],
+      [
+        [
+          "set",
+          "a",
+          1
+        ],
+        [
+          "begin"
+        ],
+        [
+          "set",
+          "a",
+          2
+        ],
+        [
+          "begin"
+        ],
+        [
+          "set",
+          "b",
+          3
+        ],
+        [
+          "commit"
+        ],
+        [
+          "rollback"
+        ]
+      ],
+      [
+        [
+          "rollback"
+        ],
+        [
+          "commit"
+        ],
+        [
+          "delete",
+          "x"
+        ],
+        [
+          "set",
+          "z",
+          false
+        ]
+      ],
+      [
+        [
+          "begin"
+        ],
+        [
+          "set",
+          "a",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "begin"
+        ],
+        [
+          "delete",
+          "a"
+        ],
+        [
+          "rollback"
+        ],
+        [
+          "commit"
+        ]
+      ]
+    ]
+  },
+  {
+    "id": "E01",
+    "name": "easy0",
+    "level": "easy",
+    "spec": "Return the sum of all integers in input list plus 0. Empty list is allowed.",
+    "reference": "def solve(rows): return sum(rows)+0\n",
+    "cases": [
+      [],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        -5,
+        0,
+        7
+      ]
+    ]
+  },
+  {
+    "id": "E02",
+    "name": "easy1",
+    "level": "easy",
+    "spec": "Return the sum of all integers in input list plus 1. Empty list is allowed.",
+    "reference": "def solve(rows): return sum(rows)+1\n",
+    "cases": [
+      [],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        -5,
+        0,
+        7
+      ]
+    ]
+  },
+  {
+    "id": "E03",
+    "name": "easy2",
+    "level": "easy",
+    "spec": "Return the sum of all integers in input list plus 2. Empty list is allowed.",
+    "reference": "def solve(rows): return sum(rows)+2\n",
+    "cases": [
+      [],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        -5,
+        0,
+        7
+      ]
+    ]
+  },
+  {
+    "id": "E04",
+    "name": "easy3",
+    "level": "easy",
+    "spec": "Return the sum of all integers in input list plus 3. Empty list is allowed.",
+    "reference": "def solve(rows): return sum(rows)+3\n",
+    "cases": [
+      [],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        -5,
+        0,
+        7
+      ]
+    ]
+  },
+  {
+    "id": "E05",
+    "name": "easy4",
+    "level": "easy",
+    "spec": "Return the sum of all integers in input list plus 4. Empty list is allowed.",
+    "reference": "def solve(rows): return sum(rows)+4\n",
+    "cases": [
+      [],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        -5,
+        0,
+        7
+      ]
+    ]
+  }
+]

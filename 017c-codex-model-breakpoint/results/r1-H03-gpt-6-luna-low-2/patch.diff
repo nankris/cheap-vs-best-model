@@ -1,0 +1,55 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..68e1a57 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,4 @@
+ import json
++
+ def decode(payload):
+-    return payload.split(",")
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..e3358f2 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,20 @@
++from decimal import Decimal, ROUND_HALF_EVEN
++
+ def solve(rows):
+-    return rows[0] if rows else 0
++    totals = {}
++    seen_ids = set()
++    for row in rows:
++        account, amount, row_id = row
++        if row_id in seen_ids:
++            continue
++        seen_ids.add(row_id)
++        totals[account] = totals.get(account, Decimal(0)) + Decimal(amount)
++
++    quantum = Decimal("0.01")
++    result = []
++    for account in sorted(totals):
++        balance = totals[account].quantize(quantum, rounding=ROUND_HALF_EVEN)
++        if balance == 0:
++            balance = Decimal("0.00")
++        result.append([account, format(balance, ".2f")])
++    return result
+diff --git a/render.py b/render.py
+index 80aac64..dc4045c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,4 @@
++import json
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)
+diff --git a/service.py b/service.py
+index 5d2579a..7259b05 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,3 @@
+ from core import solve
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

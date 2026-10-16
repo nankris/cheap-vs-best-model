@@ -1,0 +1,77 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..1e328ea 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,6 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode the JSON edge rows and final source/target row."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..059a6b9 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,37 @@
++import heapq
++from itertools import count
++
++
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the minimum directed path cost, or None when unreachable."""
++    if not rows:
++        raise ValueError("at least a source/target row is required")
++
++    source, target = rows[-1]
++    if source == target:
++        return 0
++
++    graph = {}
++    for row in rows[:-1]:
++        start, end, weight = row
++        if not isinstance(weight, int) or isinstance(weight, bool) or weight < 0:
++            raise ValueError("edge weights must be nonnegative integers")
++        graph.setdefault(start, []).append((end, weight))
++
++    distances = {source: 0}
++    sequence = count()
++    pending = [(0, next(sequence), source)]
++
++    while pending:
++        cost, _, vertex = heapq.heappop(pending)
++        if cost != distances.get(vertex):
++            continue
++        if vertex == target:
++            return cost
++        for neighbor, weight in graph.get(vertex, ()):
++            candidate = cost + weight
++            if candidate < distances.get(neighbor, float("inf")):
++                distances[neighbor] = candidate
++                heapq.heappush(pending, (candidate, next(sequence), neighbor))
++
++    return None
+diff --git a/render.py b/render.py
+index 80aac64..953db0c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)
+diff --git a/service.py b/service.py
+index 5d2579a..962301d 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,5 @@
+ from core import solve
++
++
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

@@ -1,0 +1,80 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..c744f0c 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,23 @@
+ import json
+ def decode(payload):
+-    return payload.split(",")
++    """Decode a JSON payload containing interval rows."""
++    value = json.loads(payload)
++    # Accept either the interval list itself or the conventional named field.
++    if isinstance(value, dict):
++        if "rows" in value:
++            value = value["rows"]
++        elif "intervals" in value:
++            value = value["intervals"]
++        else:
++            raise ValueError("payload object must contain 'rows' or 'intervals'")
++    if not isinstance(value, list):
++        raise ValueError("payload must be a JSON array of intervals")
++    rows = []
++    for row in value:
++        if not isinstance(row, (list, tuple)) or len(row) != 2:
++            raise ValueError("each interval must contain exactly two endpoints")
++        start, end = row
++        if isinstance(start, bool) or not isinstance(start, int) or isinstance(end, bool) or not isinstance(end, int):
++            raise ValueError("interval endpoints must be integers")
++        rows.append((start, end))
++    return rows
+diff --git a/core.py b/core.py
+index 58be593..e5e8c40 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,26 @@
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the length covered by an odd number of valid intervals."""
++    events = []
++    for start, end in rows:
++        if start < end:
++            events.append(start)
++            events.append(end)
++    events.sort()
++
++    covered = 0
++    odd = False
++    previous = None
++    i = 0
++    while i < len(events):
++        position = events[i]
++        if odd:
++            covered += position - previous
++        # All endpoints at a coordinate toggle parity by their multiplicity.
++        j = i + 1
++        while j < len(events) and events[j] == position:
++            j += 1
++        if (j - i) % 2:
++            odd = not odd
++        previous = position
++        i = j
++    return covered
+diff --git a/render.py b/render.py
+index 80aac64..dc4045c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,4 @@
++import json
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)
+diff --git a/service.py b/service.py
+index 5d2579a..7259b05 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,3 @@
+ from core import solve
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

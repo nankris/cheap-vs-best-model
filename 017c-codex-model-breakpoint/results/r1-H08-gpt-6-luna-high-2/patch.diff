@@ -1,0 +1,49 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..07fae59 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,6 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode a JSON array of interval rows."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..3b844c5 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,20 @@
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the integer length covered by an odd number of intervals."""
++    events = {}
++    for row in rows:
++        start, end = row
++        if start >= end:
++            continue
++        events[start] = events.get(start, 0) + 1
++        events[end] = events.get(end, 0) + 1
++
++    covered = 0
++    odd = False
++    previous = None
++    for point in sorted(events):
++        if odd:
++            covered += point - previous
++        if events[point] % 2:
++            odd = not odd
++        previous = point
++    return covered
+diff --git a/render.py b/render.py
+index 80aac64..953db0c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)

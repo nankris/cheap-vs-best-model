@@ -1,0 +1,47 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..513078c 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,6 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode the JSON payload into its interval rows."""
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..2a38920 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,18 @@
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return the sorted union of closed integer intervals."""
++    intervals = []
++    for row in rows:
++        start, end = row
++        if start > end:
++            start, end = end, start
++        intervals.append((start, end))
++
++    intervals.sort()
++    merged = []
++    for start, end in intervals:
++        if merged and start <= merged[-1][1] + 1:
++            previous_start, previous_end = merged[-1]
++            merged[-1] = (previous_start, max(previous_end, end))
++        else:
++            merged.append((start, end))
++    return [list(interval) for interval in merged]
+diff --git a/render.py b/render.py
+index 80aac64..953db0c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)

@@ -1,0 +1,87 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+______________________________ test_api[rows0-1] _______________________________
+
+rows = [], expected = 1
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+E       AssertionError: assert [] == 1
+E        +  where [] = <function loads at 0xffff8bb020c0>('[]')
+E        +    where <function loads at 0xffff8bb020c0> = json.loads
+E        +    and   '[]' = run('[]')
+E        +      where '[]' = <function dumps at 0xffff8bb01260>([])
+E        +        where <function dumps at 0xffff8bb01260> = json.dumps
+
+../test_hidden.py:9: AssertionError
+______________________________ test_api[rows1-7] _______________________________
+
+rows = [1, 2, 3], expected = 7
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xffff8baa1220>, s = ' 3]'
+_w = <built-in method match of re.Pattern object at 0xffff8bc66260>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 3 (char 2)
+
+/usr/local/lib/python3.12/json/decoder.py:341: JSONDecodeError
+______________________________ test_api[rows2-3] _______________________________
+
+rows = [-5, 0, 7], expected = 3
+
+    @pytest.mark.parametrize("rows,expected",CASES)
+    def test_api(rows,expected):
+        before=json.dumps(rows,sort_keys=True)
+>       assert json.loads(run(json.dumps(rows))) == expected
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+../test_hidden.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.12/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0xffff8baa1220>, s = ' 7]'
+_w = <built-in method match of re.Pattern object at 0xffff8bc66260>
+
+    def decode(self, s, _w=WHITESPACE.match):
+        """Return the Python representation of ``s`` (a ``str`` instance
+        containing a JSON document).
+    
+        """
+        obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+        end = _w(s, end).end()
+        if end != len(s):
+>           raise JSONDecodeError("Extra data", s, end)
+E           json.decoder.JSONDecodeError: Extra data: line 1 column 3 (char 2)
+
+/usr/local/lib/python3.12/json/decoder.py:341: JSONDecodeError
+=========================== short test summary info ============================
+FAILED ../test_hidden.py::test_api[rows0-1] - AssertionError: assert [] == 1
+FAILED ../test_hidden.py::test_api[rows1-7] - json.decoder.JSONDecodeError: E...
+FAILED ../test_hidden.py::test_api[rows2-3] - json.decoder.JSONDecodeError: E...
+3 failed in 0.12s

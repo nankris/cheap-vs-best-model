@@ -1,0 +1,70 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..eefabe8 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,9 @@
+ import json
++
++
+ def decode(payload):
+-    return payload.split(",")
++    """Decode the JSON edge list supplied to the public API."""
++    rows = json.loads(payload)
++    if not isinstance(rows, list):
++        raise ValueError("payload must be a JSON array of edges")
++    return rows
+diff --git a/core.py b/core.py
+index 58be593..c8f9bd4 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,38 @@
+ def solve(rows):
+-    return rows[0] if rows else 0
++    """Return sorted connected components for an iterable of undirected edges."""
++    parent = {}
++
++    def find(node):
++        # Every node, including a node seen only in a self-loop, is registered.
++        if node not in parent:
++            parent[node] = node
++        root = node
++        while parent[root] != root:
++            root = parent[root]
++        while parent[node] != node:
++            next_node = parent[node]
++            parent[node] = root
++            node = next_node
++        return root
++
++    for edge in rows:
++        if not isinstance(edge, (list, tuple)) or len(edge) != 2:
++            raise ValueError("each edge must contain exactly two nodes")
++        left, right = edge
++        if not isinstance(left, str) or not isinstance(right, str):
++            raise ValueError("edge nodes must be strings")
++        left_root = find(left)
++        right_root = find(right)
++        if left_root != right_root:
++            # Root choice does not affect output ordering; deterministic choice
++            # keeps the internal structure stable as well.
++            if left_root < right_root:
++                parent[right_root] = left_root
++            else:
++                parent[left_root] = right_root
++
++    components = {}
++    for node in parent:
++        components.setdefault(find(node), []).append(node)
++    result = [sorted(component) for component in components.values()]
++    return sorted(result)
+diff --git a/render.py b/render.py
+index 80aac64..953db0c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)

@@ -1,0 +1,13 @@
+{
+  "round": 1,
+  "task": "H03",
+  "level": "hard",
+  "model": "gpt-6-luna",
+  "effort": "high",
+  "rep": 1,
+  "status": "timeout",
+  "returncode": null,
+  "passed": true,
+  "seconds": 240.66,
+  "usage": null
+}

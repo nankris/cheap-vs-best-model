@@ -1,0 +1,37 @@
+diff --git a/codec.py b/codec.py
+index 7e4278f..49bf0a4 100644
+--- a/codec.py
++++ b/codec.py
+@@ -1,3 +1,3 @@
+ import json
+ def decode(payload):
+-    return payload.split(",")
++    return json.loads(payload)
+diff --git a/core.py b/core.py
+index 58be593..075e2b9 100644
+--- a/core.py
++++ b/core.py
+@@ -1,2 +1,2 @@
+ def solve(rows):
+-    return rows[0] if rows else 0
++    return sum(rows) + 1
+diff --git a/render.py b/render.py
+index 80aac64..953db0c 100644
+--- a/render.py
++++ b/render.py
+@@ -1,2 +1,5 @@
++import json
++
++
+ def present(value):
+-    return str(value)
++    return json.dumps(value)
+diff --git a/service.py b/service.py
+index 5d2579a..7259b05 100644
+--- a/service.py
++++ b/service.py
+@@ -1,3 +1,3 @@
+ from core import solve
+ def compute(rows):
+-    return solve(rows[::-1])
++    return solve(rows)

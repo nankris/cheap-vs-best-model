@@ -1,0 +1,19 @@
+{
+  "round": 1,
+  "task": "H10",
+  "level": "hard",
+  "model": "gpt-6-luna",
+  "effort": "high",
+  "rep": 1,
+  "status": "completed",
+  "returncode": 0,
+  "passed": true,
+  "seconds": 26.57,
+  "usage": {
+    "input_tokens": 101342,
+    "cached_input_tokens": 92416,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1734,
+    "reasoning_output_tokens": 494
+  }
+}
