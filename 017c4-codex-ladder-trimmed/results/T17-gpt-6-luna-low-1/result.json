@@ -1,0 +1,24 @@
+{
+  "task": "T17",
+  "tier": 4,
+  "name": "ledger",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 55.0645387172699,
+  "usage": {
+    "input_tokens": 299965,
+    "cached_input_tokens": 268800,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5841,
+    "reasoning_output_tokens": 405
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 19,
+  "checks_total": 19,
+  "failures": []
+}

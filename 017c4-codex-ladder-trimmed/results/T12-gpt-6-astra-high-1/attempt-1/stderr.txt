@@ -1,0 +1,6 @@
+Reading additional input from stdin...
+2026-10-16T00:28:16.529445Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /tmp/017c4-63363s0f/api.py:
+from service import compute
+from render import present
+
+def run(payload): return present(compute(payload))

@@ -1,0 +1,8 @@
+{
+  "n": 12,
+  "normal_approx_power_gap40_sd45": 0.8684728934437995,
+  "normal_approx_power_gap25_sd35": 0.6964992447166152,
+  "zero_discordance_upper95": 0.22092219194555585,
+  "minimum_n_zero_discordance_equivalence": 29,
+  "note": "12 tasks cannot establish 10-point equivalence under retained zero-discordance guard"
+}

@@ -1,0 +1,5 @@
+task,tier,name,model,effort,rep,attempt,passed,checks_passed,checks_total,seconds
+T13,3,scc,gpt-6-luna,low,1,1,True,5,5,33.615200996398926
+T16,4,topology,gpt-6-luna,low,1,1,True,21,21,41.49311184883118
+T20,4,scheduling,gpt-6-luna,low,1,1,True,20,20,31.695668697357178
+T22,4,ranges,gpt-6-luna,low,1,1,True,20,20,30.123509168624878

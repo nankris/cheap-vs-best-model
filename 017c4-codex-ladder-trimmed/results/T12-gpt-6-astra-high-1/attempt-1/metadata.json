@@ -1,0 +1,20 @@
+{
+  "task": "T12",
+  "tier": 3,
+  "name": "glob",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 127.18896412849426,
+  "usage": {
+    "input_tokens": 131851,
+    "cached_input_tokens": 120320,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5469,
+    "reasoning_output_tokens": 272
+  },
+  "errors": []
+}

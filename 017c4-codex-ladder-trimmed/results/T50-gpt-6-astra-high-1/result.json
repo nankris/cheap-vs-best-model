@@ -1,0 +1,24 @@
+{
+  "task": "T50",
+  "tier": 3,
+  "name": "scheduling",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 52.72610926628113,
+  "usage": {
+    "input_tokens": 74517,
+    "cached_input_tokens": 67200,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2241,
+    "reasoning_output_tokens": 113
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 5,
+  "checks_total": 5,
+  "failures": []
+}

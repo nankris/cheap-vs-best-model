@@ -1,0 +1,24 @@
+{
+  "task": "T17",
+  "tier": 4,
+  "name": "ledger",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 160.27111864089966,
+  "usage": {
+    "input_tokens": 102623,
+    "cached_input_tokens": 87680,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 6514,
+    "reasoning_output_tokens": 1185
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 19,
+  "checks_total": 19,
+  "failures": []
+}

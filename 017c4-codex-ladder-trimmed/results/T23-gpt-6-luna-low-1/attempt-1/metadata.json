@@ -1,0 +1,20 @@
+{
+  "task": "T23",
+  "tier": 4,
+  "name": "refactor",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 54.32496523857117,
+  "usage": {
+    "input_tokens": 371748,
+    "cached_input_tokens": 341504,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5583,
+    "reasoning_output_tokens": 402
+  },
+  "errors": []
+}

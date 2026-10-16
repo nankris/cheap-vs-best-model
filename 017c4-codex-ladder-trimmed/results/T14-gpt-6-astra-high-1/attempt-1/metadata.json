@@ -1,0 +1,20 @@
+{
+  "task": "T14",
+  "tier": 3,
+  "name": "mst",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 93.30157041549683,
+  "usage": {
+    "input_tokens": 110518,
+    "cached_input_tokens": 102656,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 4172,
+    "reasoning_output_tokens": 93
+  },
+  "errors": []
+}

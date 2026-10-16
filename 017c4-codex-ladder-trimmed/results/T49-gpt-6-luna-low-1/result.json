@@ -1,0 +1,24 @@
+{
+  "task": "T49",
+  "tier": 3,
+  "name": "versions",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 15.843900918960571,
+  "usage": {
+    "input_tokens": 69892,
+    "cached_input_tokens": 65280,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1146,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 5,
+  "checks_total": 5,
+  "failures": []
+}

@@ -1,0 +1,24 @@
+{
+  "task": "T22",
+  "tier": 4,
+  "name": "ranges",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 30.123509168624878,
+  "usage": {
+    "input_tokens": 151639,
+    "cached_input_tokens": 136960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 3861,
+    "reasoning_output_tokens": 155
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 20,
+  "checks_total": 20,
+  "failures": []
+}

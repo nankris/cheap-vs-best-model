@@ -1,0 +1,23 @@
+{
+  "verdict": "STILL INCONCLUSIVE",
+  "completed": 4,
+  "planned": 48,
+  "tiers": [],
+  "tokens": {
+    "gpt-6-luna": {
+      "input_tokens": 892771,
+      "cached_input_tokens": 805888,
+      "output_tokens": 13416,
+      "reasoning_output_tokens": 155
+    },
+    "gpt-6-astra": {
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_output_tokens": 0
+    }
+  },
+  "infra_attempts": 0,
+  "gpu": null,
+  "CU": 0
+}

@@ -1,0 +1,20 @@
+{
+  "task": "T10",
+  "tier": 3,
+  "name": "jsonpatch",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 35.02927565574646,
+  "usage": {
+    "input_tokens": 229743,
+    "cached_input_tokens": 211200,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2924,
+    "reasoning_output_tokens": 0
+  },
+  "errors": []
+}

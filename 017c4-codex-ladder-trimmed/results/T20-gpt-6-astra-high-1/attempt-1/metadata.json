@@ -1,0 +1,20 @@
+{
+  "task": "T20",
+  "tier": 4,
+  "name": "scheduling",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 114.76241898536682,
+  "usage": {
+    "input_tokens": 97477,
+    "cached_input_tokens": 88064,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5157,
+    "reasoning_output_tokens": 209
+  },
+  "errors": []
+}

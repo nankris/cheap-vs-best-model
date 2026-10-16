@@ -1,0 +1,29 @@
+{
+  "task": "T12",
+  "tier": 3,
+  "name": "glob",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 23.81830382347107,
+  "usage": {
+    "input_tokens": 117968,
+    "cached_input_tokens": 102400,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2210,
+    "reasoning_output_tokens": 113
+  },
+  "errors": [],
+  "passed": false,
+  "checks_passed": 4,
+  "checks_total": 5,
+  "failures": [
+    {
+      "case": "structure",
+      "error": "ValueError('too many values to unpack (expected 2)')"
+    }
+  ]
+}

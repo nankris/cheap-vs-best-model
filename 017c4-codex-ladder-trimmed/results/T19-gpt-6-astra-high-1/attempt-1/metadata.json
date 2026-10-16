@@ -1,0 +1,25 @@
+{
+  "task": "T19",
+  "tier": 4,
+  "name": "versions",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "infrastructure",
+  "returncode": 1,
+  "seconds": 52.98728322982788,
+  "usage": null,
+  "errors": [
+    {
+      "type": "error",
+      "message": "You\u2019ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 5:15 AM."
+    },
+    {
+      "type": "turn.failed",
+      "error": {
+        "message": "You\u2019ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/settings/usage to purchase more credits or try again at 5:15 AM."
+      }
+    }
+  ]
+}

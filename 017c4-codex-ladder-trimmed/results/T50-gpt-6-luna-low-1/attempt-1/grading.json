@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "checks_passed": 3,
+  "checks_total": 5,
+  "failures": [
+    {
+      "case": 1,
+      "error": "AssertionError('([0, 8, 0, 23], [0, 8, 0, 15])')"
+    },
+    {
+      "case": 2,
+      "error": "AssertionError('([23, 0, 8, 0], [15, 0, 8, 0])')"
+    }
+  ]
+}
