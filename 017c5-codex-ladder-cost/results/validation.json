@@ -1,0 +1,146 @@
+[
+  {
+    "task": "T10",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T11",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T12",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T13",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T14",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T45",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T46",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T47",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T48",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T49",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T50",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T51",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 5
+  },
+  {
+    "task": "T15",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 20
+  },
+  {
+    "task": "T16",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 21
+  },
+  {
+    "task": "T17",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 19
+  },
+  {
+    "task": "T18",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 20
+  },
+  {
+    "task": "T19",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 19
+  },
+  {
+    "task": "T20",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 20
+  },
+  {
+    "task": "T21",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 19
+  },
+  {
+    "task": "T22",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 20
+  },
+  {
+    "task": "T23",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 22
+  },
+  {
+    "task": "T24",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 20
+  },
+  {
+    "task": "T25",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 61
+  },
+  {
+    "task": "T26",
+    "reference_pass": true,
+    "broken_rejected": true,
+    "checks": 59
+  }
+]

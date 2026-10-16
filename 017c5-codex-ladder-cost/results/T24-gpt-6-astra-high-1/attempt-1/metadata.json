@@ -1,0 +1,20 @@
+{
+  "task": "T24",
+  "tier": 4,
+  "name": "rollback",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 139.4734869003296,
+  "usage": {
+    "input_tokens": 98263,
+    "cached_input_tokens": 82176,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 5438,
+    "reasoning_output_tokens": 192
+  },
+  "errors": []
+}

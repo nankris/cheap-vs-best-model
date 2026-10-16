@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "checks_passed": 4,
+  "checks_total": 5,
+  "failures": [
+    {
+      "case": "structure",
+      "error": "ValueError('too many values to unpack (expected 2)')"
+    }
+  ]
+}

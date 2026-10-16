@@ -1,0 +1,122 @@
+{"time": 1792122208.2912426, "event": "preregistered", "cu": 0, "balance": 170.81, "gpu": null}
+{"time": 1792122213.3079636, "event": "runner_start", "codex_home_inherited": null}
+{"time": 1792122213.3366194, "event": "attempt_start", "job": "T50-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122213.345057, "event": "attempt_start", "job": "T20-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122213.359593, "event": "attempt_start", "job": "T46-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122213.3645475, "event": "attempt_start", "job": "T21-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122245.0266953, "event": "attempt_end", "job": "T50-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 31.69084620475769}
+{"time": 1792122245.1263187, "event": "graded", "job": "T50-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122245.1307163, "event": "attempt_start", "job": "T51-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122258.7071471, "event": "attempt_end", "job": "T20-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 45.32305145263672}
+{"time": 1792122259.019845, "event": "graded", "job": "T20-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122259.0420766, "event": "attempt_start", "job": "T15-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122268.2011309, "event": "attempt_end", "job": "T51-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 23.06684637069702}
+{"time": 1792122268.3140433, "event": "graded", "job": "T51-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122268.3189137, "event": "attempt_start", "job": "T48-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122280.5051594, "event": "attempt_end", "job": "T46-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 67.1496000289917}
+{"time": 1792122280.614756, "event": "graded", "job": "T46-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122280.6206045, "event": "attempt_start", "job": "T22-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122297.1692648, "event": "attempt_end", "job": "T15-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 38.1255784034729}
+{"time": 1792122297.2846377, "event": "graded", "job": "T15-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122297.2878346, "event": "attempt_start", "job": "T25-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122301.7485008, "event": "attempt_end", "job": "T48-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 33.42715620994568}
+{"time": 1792122301.851557, "event": "graded", "job": "T48-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122301.8555079, "event": "attempt_start", "job": "T14-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122333.1133795, "event": "attempt_end", "job": "T14-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 31.25449562072754}
+{"time": 1792122333.3230212, "event": "graded", "job": "T14-gpt-6-luna-low-1", "passed": false}
+{"time": 1792122333.3488698, "event": "attempt_start", "job": "T14-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122338.5895007, "event": "attempt_end", "job": "T25-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 41.299105644226074}
+{"time": 1792122338.8385794, "event": "graded", "job": "T25-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122338.8432848, "event": "attempt_start", "job": "T10-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122381.6304855, "event": "attempt_end", "job": "T21-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 168.29787969589233}
+{"time": 1792122381.7209823, "event": "graded", "job": "T21-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122381.724487, "event": "attempt_start", "job": "T23-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122398.8126502, "event": "attempt_end", "job": "T22-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 118.18991184234619}
+{"time": 1792122398.93797, "event": "graded", "job": "T22-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122398.9417968, "event": "attempt_start", "job": "T46-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122423.890483, "event": "attempt_end", "job": "T46-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 24.94333028793335}
+{"time": 1792122423.9753766, "event": "graded", "job": "T46-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122423.9785495, "event": "attempt_start", "job": "T47-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122442.7950726, "event": "attempt_end", "job": "T23-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 61.06839323043823}
+{"time": 1792122442.9074366, "event": "graded", "job": "T23-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122442.9108603, "event": "attempt_start", "job": "T49-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122443.8375545, "event": "attempt_end", "job": "T14-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 110.48628616333008}
+{"time": 1792122444.0297482, "event": "graded", "job": "T14-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122444.0339608, "event": "attempt_start", "job": "T19-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122449.9596524, "event": "attempt_end", "job": "T47-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 25.974019050598145}
+{"time": 1792122450.0460935, "event": "graded", "job": "T47-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122450.0501466, "event": "attempt_start", "job": "T24-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122478.1621408, "event": "attempt_end", "job": "T19-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 34.1249885559082}
+{"time": 1792122478.28519, "event": "graded", "job": "T19-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122478.2897966, "event": "attempt_start", "job": "T49-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122497.4168065, "event": "attempt_end", "job": "T49-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 19.125444412231445}
+{"time": 1792122497.4811273, "event": "graded", "job": "T49-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122497.484028, "event": "attempt_start", "job": "T50-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122498.5869823, "event": "attempt_end", "job": "T24-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 48.52462196350098}
+{"time": 1792122498.8504586, "event": "graded", "job": "T24-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122498.8658297, "event": "attempt_start", "job": "T11-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122507.2540326, "event": "attempt_end", "job": "T49-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 64.33507800102234}
+{"time": 1792122507.4136324, "event": "graded", "job": "T49-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122507.4196293, "event": "attempt_start", "job": "T45-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122519.1004496, "event": "attempt_end", "job": "T11-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 20.23421001434326}
+{"time": 1792122519.1981745, "event": "graded", "job": "T11-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122519.201703, "event": "attempt_start", "job": "T17-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122519.7449353, "event": "attempt_end", "job": "T10-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 180.89945936203003}
+{"time": 1792122519.9945076, "event": "graded", "job": "T10-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122520.0240335, "event": "attempt_start", "job": "T24-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122550.7799728, "event": "attempt_end", "job": "T17-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 31.575248956680298}
+{"time": 1792122550.918009, "event": "graded", "job": "T17-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122550.9219306, "event": "attempt_start", "job": "T45-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122564.5621912, "event": "attempt_end", "job": "T50-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 67.07618021965027}
+{"time": 1792122564.6548488, "event": "graded", "job": "T50-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122564.6629672, "event": "attempt_start", "job": "T23-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122566.6571376, "event": "attempt_end", "job": "T45-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 59.21643400192261}
+{"time": 1792122566.8647833, "event": "graded", "job": "T45-gpt-6-luna-low-1", "passed": false}
+{"time": 1792122566.8830304, "event": "attempt_start", "job": "T18-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122639.7047303, "event": "attempt_end", "job": "T18-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 72.8212616443634}
+{"time": 1792122639.811995, "event": "graded", "job": "T18-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122639.8156695, "event": "attempt_start", "job": "T15-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122659.4818633, "event": "attempt_end", "job": "T24-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 139.4734869003296}
+{"time": 1792122659.5831606, "event": "graded", "job": "T24-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122659.5872824, "event": "attempt_start", "job": "T51-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122667.2761416, "event": "attempt_end", "job": "T45-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 116.35112714767456}
+{"time": 1792122667.3759472, "event": "graded", "job": "T45-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122667.38054, "event": "attempt_start", "job": "T48-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122734.9070601, "event": "attempt_end", "job": "T48-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 67.52217626571655}
+{"time": 1792122734.9924417, "event": "graded", "job": "T48-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122734.9962342, "event": "attempt_start", "job": "T12-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122745.6975417, "event": "attempt_end", "job": "T23-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 181.03153157234192}
+{"time": 1792122745.7990575, "event": "graded", "job": "T23-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122745.904639, "event": "attempt_start", "job": "T17-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122762.6740496, "event": "attempt_end", "job": "T12-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 27.67276668548584}
+{"time": 1792122762.717632, "event": "attempt_end", "job": "T51-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 103.12732100486755}
+{"time": 1792122762.8301105, "event": "graded", "job": "T12-gpt-6-luna-low-1", "passed": false}
+{"time": 1792122762.835193, "event": "attempt_start", "job": "T13-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122762.8475516, "event": "graded", "job": "T51-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122762.8537667, "event": "attempt_start", "job": "T47-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122776.5208054, "event": "attempt_end", "job": "T15-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 136.69935750961304}
+{"time": 1792122776.6620038, "event": "graded", "job": "T15-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122776.6675863, "event": "attempt_start", "job": "T16-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122839.6101527, "event": "attempt_end", "job": "T13-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 76.77196478843689}
+{"time": 1792122839.7129009, "event": "graded", "job": "T13-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122839.720702, "event": "attempt_start", "job": "T25-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122875.0821838, "event": "attempt_end", "job": "T47-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 112.22680950164795}
+{"time": 1792122875.1626196, "event": "graded", "job": "T47-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122875.1652863, "event": "attempt_start", "job": "T21-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122906.8418546, "event": "attempt_end", "job": "T21-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 31.667815923690796}
+{"time": 1792122907.031837, "event": "graded", "job": "T21-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122907.037067, "event": "attempt_start", "job": "T26-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122920.9363394, "event": "attempt_end", "job": "T16-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 144.25520777702332}
+{"time": 1792122921.2055774, "event": "graded", "job": "T16-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122921.232335, "event": "attempt_start", "job": "T20-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122946.721153, "event": "attempt_end", "job": "T26-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 39.67657136917114}
+{"time": 1792122947.0939624, "event": "graded", "job": "T26-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122947.1017582, "event": "attempt_start", "job": "T16-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122950.4034379, "event": "attempt_end", "job": "T17-gpt-6-astra-high-1", "attempt": 1, "status": "completed", "seconds": 204.49273467063904}
+{"time": 1792122950.572277, "event": "graded", "job": "T17-gpt-6-astra-high-1", "passed": true}
+{"time": 1792122950.5759463, "event": "attempt_start", "job": "T10-gpt-6-luna-low-1", "attempt": 1}
+{"time": 1792122973.375469, "event": "attempt_end", "job": "T10-gpt-6-luna-low-1", "attempt": 1, "status": "completed", "seconds": 22.795416593551636}
+{"time": 1792122973.4689121, "event": "graded", "job": "T10-gpt-6-luna-low-1", "passed": true}
+{"time": 1792122973.4737332, "event": "attempt_start", "job": "T12-gpt-6-astra-high-1", "attempt": 1}
+{"time": 1792122981.3018937, "event": "attempt_end", "job": "T12-gpt-6-astra-high-1", "attempt": 1, "status": "infrastructure", "seconds": 7.826016187667847}
+{"time": 1792122987.097124, "event": "attempt_end", "job": "T16-gpt-6-luna-low-1", "attempt": 1, "status": "infrastructure", "seconds": 39.99185252189636}

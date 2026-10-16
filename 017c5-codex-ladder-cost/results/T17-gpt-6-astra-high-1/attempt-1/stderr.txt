@@ -1,0 +1,3 @@
+Reading additional input from stdin...
+2026-10-16T03:52:27.189499Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer resource_metadata=\"https://codex-app.tldraw.xyz/.well-known/oauth-protected-resource/mcp\", scope=\"openid profile email offline_access\"" })
+2026-10-16T03:53:41.226076Z ERROR codex_core::tools::router: error=apply_patch verification failed: invalid patch: multiple operations target /tmp/017c5-pt9oomij/core.py

@@ -1,0 +1,20 @@
+{
+  "task": "T12",
+  "tier": 3,
+  "name": "glob",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 27.67276668548584,
+  "usage": {
+    "input_tokens": 238144,
+    "cached_input_tokens": 230272,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2276,
+    "reasoning_output_tokens": 0
+  },
+  "errors": []
+}

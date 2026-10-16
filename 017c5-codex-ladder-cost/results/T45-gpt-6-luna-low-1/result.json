@@ -1,0 +1,29 @@
+{
+  "task": "T45",
+  "tier": 3,
+  "name": "intervals",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 59.21643400192261,
+  "usage": {
+    "input_tokens": 219536,
+    "cached_input_tokens": 201984,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1604,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "passed": false,
+  "checks_passed": 4,
+  "checks_total": 5,
+  "failures": [
+    {
+      "case": "structure",
+      "error": "AssertionError()"
+    }
+  ]
+}

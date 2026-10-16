@@ -1,0 +1,20 @@
+{
+  "task": "T51",
+  "tier": 3,
+  "name": "components",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 103.12732100486755,
+  "usage": {
+    "input_tokens": 109726,
+    "cached_input_tokens": 102272,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 3736,
+    "reasoning_output_tokens": 109
+  },
+  "errors": []
+}

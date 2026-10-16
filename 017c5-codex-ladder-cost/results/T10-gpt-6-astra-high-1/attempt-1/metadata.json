@@ -1,0 +1,20 @@
+{
+  "task": "T10",
+  "tier": 3,
+  "name": "jsonpatch",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 180.89945936203003,
+  "usage": {
+    "input_tokens": 138462,
+    "cached_input_tokens": 125056,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 7649,
+    "reasoning_output_tokens": 269
+  },
+  "errors": []
+}

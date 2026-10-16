@@ -1,0 +1,6 @@
+import core
+from model import Result
+
+
+def compute(rows):
+    return Result(core.solve(rows))

@@ -1,0 +1,20 @@
+{
+  "task": "T13",
+  "tier": 3,
+  "name": "scc",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 76.77196478843689,
+  "usage": {
+    "input_tokens": 92958,
+    "cached_input_tokens": 83584,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2668,
+    "reasoning_output_tokens": 99
+  },
+  "errors": []
+}

@@ -1,0 +1,24 @@
+{
+  "task": "T50",
+  "tier": 3,
+  "name": "scheduling",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 31.69084620475769,
+  "usage": {
+    "input_tokens": 226558,
+    "cached_input_tokens": 208128,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1848,
+    "reasoning_output_tokens": 0
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 5,
+  "checks_total": 5,
+  "failures": []
+}

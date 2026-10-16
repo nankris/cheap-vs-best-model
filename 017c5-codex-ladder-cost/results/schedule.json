@@ -1,0 +1,290 @@
+[
+  {
+    "task": "T21",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T20",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T50",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T46",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T51",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T15",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T48",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T22",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T25",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T14",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T14",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T10",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T23",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T46",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T47",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T49",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T19",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T24",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T49",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T50",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T11",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T45",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T17",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T24",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T45",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T23",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T18",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T15",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T51",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T48",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T12",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T17",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T13",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T47",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T16",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T25",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T21",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T26",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T20",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T16",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T10",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T12",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T19",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T18",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T11",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  },
+  {
+    "task": "T13",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T22",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "rep": 1
+  },
+  {
+    "task": "T26",
+    "model": "gpt-6-astra",
+    "effort": "high",
+    "rep": 1
+  }
+]

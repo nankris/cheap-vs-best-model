@@ -1,0 +1,20 @@
+{
+  "task": "T49",
+  "tier": 3,
+  "name": "versions",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 64.33507800102234,
+  "usage": {
+    "input_tokens": 74465,
+    "cached_input_tokens": 69248,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2118,
+    "reasoning_output_tokens": 121
+  },
+  "errors": []
+}

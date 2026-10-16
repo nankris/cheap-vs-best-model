@@ -1,0 +1,20 @@
+{
+  "task": "T45",
+  "tier": 3,
+  "name": "intervals",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 116.35112714767456,
+  "usage": {
+    "input_tokens": 110292,
+    "cached_input_tokens": 98048,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 4099,
+    "reasoning_output_tokens": 141
+  },
+  "errors": []
+}

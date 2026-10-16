@@ -1,0 +1,10 @@
+{
+  "0.3": {
+    "superiority_at_ratio_1.6": 0.9808303278092771,
+    "no_penalty_at_ratio_1": 0.9539013317009238
+  },
+  "0.5": {
+    "superiority_at_ratio_1.6": 0.6767841400819663,
+    "no_penalty_at_ratio_1": 0.5895359225438486
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/usr/local/bin/python",
+    "/workspace/work/tig/017c5-codex-ladder-cost/scripts/isolate.py",
+    "/tmp/017c5-qirgmw7d",
+    "codex",
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--json",
+    "--skip-git-repo-check",
+    "--dangerously-bypass-approvals-and-sandbox",
+    "-m",
+    "gpt-6-astra",
+    "-c",
+    "model_reasoning_effort=\"high\"",
+    "-C",
+    "/tmp/017c5-qirgmw7d",
+    "Read TASK.md and implement the complete contract. Work only in this workspace. Do not use subagents or network or inspect other directories. You may create your own tests. Finish after implementation and validation."
+  ],
+  "start": 1792122659.5862489
+}

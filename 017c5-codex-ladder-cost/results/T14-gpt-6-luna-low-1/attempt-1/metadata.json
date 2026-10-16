@@ -1,0 +1,20 @@
+{
+  "task": "T14",
+  "tier": 3,
+  "name": "mst",
+  "model": "gpt-6-luna",
+  "effort": "low",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 31.25449562072754,
+  "usage": {
+    "input_tokens": 234304,
+    "cached_input_tokens": 219392,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1854,
+    "reasoning_output_tokens": 0
+  },
+  "errors": []
+}

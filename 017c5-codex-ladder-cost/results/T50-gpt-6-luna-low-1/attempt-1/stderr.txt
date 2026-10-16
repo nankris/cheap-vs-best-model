@@ -1,0 +1,6 @@
+Reading additional input from stdin...
+2026-10-16T03:43:37.581864Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer resource_metadata=\"https://codex-app.tldraw.xyz/.well-known/oauth-protected-resource/mcp\", scope=\"openid profile email offline_access\"" })
+2026-10-16T03:43:47.222751Z ERROR codex_core::tools::router: error=apply_patch verification failed: Failed to find expected lines in /tmp/017c5-g9n6785w/service.py:
+from core import solve
+
+def compute(rows): return solve(rows)

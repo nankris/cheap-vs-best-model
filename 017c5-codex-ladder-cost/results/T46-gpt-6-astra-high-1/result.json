@@ -1,0 +1,24 @@
+{
+  "task": "T46",
+  "tier": 3,
+  "name": "topology",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 67.1496000289917,
+  "usage": {
+    "input_tokens": 75010,
+    "cached_input_tokens": 69504,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2146,
+    "reasoning_output_tokens": 93
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 5,
+  "checks_total": 5,
+  "failures": []
+}

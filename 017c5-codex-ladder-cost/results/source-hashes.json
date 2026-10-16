@@ -1,0 +1,13 @@
+{
+  "017c4-codex-ladder-trimmed/private/suite.json": "934b6d63784bf06650565a1de2e3e4a0998c5e42bd82eecd3b853618a80fae27",
+  "017c4-codex-ladder-trimmed/scripts/analyze.py": "0bbade4855ce9c1d40813a40eb8cbc053911f7c79537a7b8aba63d9bee349c26",
+  "017c4-codex-ladder-trimmed/scripts/build.py": "88ed20b2bfb9b2740da3b973b6e2a6f3560e7ef05ba7791a3dd8cabe34160c70",
+  "017c4-codex-ladder-trimmed/scripts/grade.py": "be71cc227ebdabe0c636e7bc1b8d33b291a1e4099a77c44d2ecedf617ee3c19b",
+  "017c4-codex-ladder-trimmed/scripts/isolate.py": "fa3cd0612a1f8e097876a5463d9d6d6b978f5a1fde107edb1de27d7ce0dc92d1",
+  "017c4-codex-ladder-trimmed/scripts/journal_reference.py": "53170a4c0a41849ab1b62410be6f29541b7a2b1af532c405e3e7f19470ad5a10",
+  "017c4-codex-ladder-trimmed/scripts/regrade.py": "37952d666b5723b83c7bcfb6c874b2de63a873d08be55aa736cfcda07e0e9e3c",
+  "017c4-codex-ladder-trimmed/scripts/run.py": "ecf9a496ae3ae3067acc6f29272f1ef899acf6720172332d365118569a80cd42",
+  "017c4-codex-ladder-trimmed/scripts/validate.py": "1fc712973cc731d3cfb4b3c20fa013b953d4d1e13b3014dc5d7af295fe0d00db",
+  "017c3-codex-difficulty-ladder/README.md": "d256ebe0f81e2412567a05049f0c5c54d918f0bd80001bd84eb04dbb044e04e9",
+  "017c-codex-model-breakpoint/README.md": "0f5763d4e310f038d45b2072cef4277667e6ffa1834b5eb7e656cf373d031087"
+}

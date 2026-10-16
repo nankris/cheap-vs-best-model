@@ -1,0 +1,24 @@
+{
+  "task": "T22",
+  "tier": 4,
+  "name": "ranges",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 118.18991184234619,
+  "usage": {
+    "input_tokens": 96589,
+    "cached_input_tokens": 83456,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 4298,
+    "reasoning_output_tokens": 302
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 20,
+  "checks_total": 20,
+  "failures": []
+}

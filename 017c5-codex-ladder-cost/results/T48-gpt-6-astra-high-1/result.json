@@ -1,0 +1,24 @@
+{
+  "task": "T48",
+  "tier": 3,
+  "name": "path",
+  "model": "gpt-6-astra",
+  "effort": "high",
+  "rep": 1,
+  "attempt": 1,
+  "status": "completed",
+  "returncode": 0,
+  "seconds": 67.52217626571655,
+  "usage": {
+    "input_tokens": 75321,
+    "cached_input_tokens": 67456,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2322,
+    "reasoning_output_tokens": 101
+  },
+  "errors": [],
+  "passed": true,
+  "checks_passed": 5,
+  "checks_total": 5,
+  "failures": []
+}

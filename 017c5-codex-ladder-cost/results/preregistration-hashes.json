@@ -1,0 +1,10 @@
+{
+  "scripts/build.py": "88ed20b2bfb9b2740da3b973b6e2a6f3560e7ef05ba7791a3dd8cabe34160c70",
+  "scripts/grade.py": "be71cc227ebdabe0c636e7bc1b8d33b291a1e4099a77c44d2ecedf617ee3c19b",
+  "scripts/isolate.py": "fa3cd0612a1f8e097876a5463d9d6d6b978f5a1fde107edb1de27d7ce0dc92d1",
+  "scripts/journal_reference.py": "53170a4c0a41849ab1b62410be6f29541b7a2b1af532c405e3e7f19470ad5a10",
+  "scripts/run.py": "1eac799a187ac170d0d3c4b8fcd99218b268e35d45956dbb3f57b8758d703538",
+  "scripts/validate.py": "1fc712973cc731d3cfb4b3c20fa013b953d4d1e13b3014dc5d7af295fe0d00db",
+  "private/suite.json": "934b6d63784bf06650565a1de2e3e4a0998c5e42bd82eecd3b853618a80fae27",
+  "README.md": "6ca7725ddc1750fa399ce74c3e0242cc705ffb8217d76e11a7ded094a69cd141"
+}

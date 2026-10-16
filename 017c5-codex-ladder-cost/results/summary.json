@@ -1,0 +1,32 @@
+{
+  "complete_trials": 8,
+  "paired_tasks": 0,
+  "seed": 1705,
+  "resamples": 20000,
+  "gpu": null,
+  "cu_used": 0,
+  "metrics": {},
+  "verdict": "STILL INCONCLUSIVE",
+  "pass_rates": {
+    "gpt-6-astra": {
+      "passed": 1,
+      "n": 1,
+      "exact_ci95": [
+        0.025,
+        1.0
+      ],
+      "failures": []
+    },
+    "gpt-6-luna": {
+      "passed": 6,
+      "n": 7,
+      "exact_ci95": [
+        0.4212768029568048,
+        0.9963897031380994
+      ],
+      "failures": [
+        "T14"
+      ]
+    }
+  }
+}
